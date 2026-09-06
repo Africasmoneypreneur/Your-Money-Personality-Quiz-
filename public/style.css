@@ -1,18 +1,19 @@
 /* ==========================================================================
    Africa's Moneypreneur — Money Personality Quiz
-   Design: a receipt/statement motif in deep plum, warm gold and blush —
-   money as a felt, everyday material rather than a generic fintech dashboard.
+   Brand theme: charcoal grey + red. A confident, editorial statement look
+   built around the two brand colours (#E31919 red / #5D5C5C grey).
    ========================================================================== */
 
 :root {
-  --plum: #2A0F2C;
-  --plum-deep: #1B0919;
-  --cream: #FBF1E4;
-  --gold: #D6A54B;
-  --gold-soft: #E8CB93;
-  --rose: #E4667C;
-  --ink: #24121F;
-  --line: rgba(251, 241, 228, 0.16);
+  --charcoal: #1E1D1D;
+  --charcoal-deep: #131212;
+  --cream: #F6F3F1;
+  --gray: #5D5C5C;
+  --gray-light: #A6A4A4;
+  --red: #E31919;
+  --red-soft: #FF4B3E;
+  --ink: #141212;
+  --line: rgba(246, 243, 241, 0.14);
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -30,7 +31,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--plum);
+  background: var(--charcoal);
   color: var(--cream);
   font-family: var(--font-body);
   min-height: 100%;
@@ -38,8 +39,8 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(214, 165, 75, 0.16), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(228, 102, 124, 0.12), transparent 55%);
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(227, 25, 25, 0.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(93, 92, 92, 0.22), transparent 55%);
 }
 
 /* Decorative torn-edge strip, evokes the top of a receipt */
@@ -47,9 +48,9 @@ body {
   height: 14px;
   width: 100%;
   background:
-    linear-gradient(135deg, var(--gold) 25%, transparent 25%) -7px 0 / 14px 14px,
-    linear-gradient(225deg, var(--gold) 25%, transparent 25%) -7px 0 / 14px 14px;
-  background-color: var(--plum-deep);
+    linear-gradient(135deg, var(--red) 25%, transparent 25%) -7px 0 / 14px 14px,
+    linear-gradient(225deg, var(--red) 25%, transparent 25%) -7px 0 / 14px 14px;
+  background-color: var(--charcoal-deep);
   opacity: 0.9;
 }
 
@@ -72,7 +73,7 @@ body {
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.02em;
-  color: var(--gold-soft);
+  color: var(--red);
   margin: 0 0 14px;
 }
 
@@ -89,7 +90,7 @@ h1 {
 .lede {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: rgba(251, 241, 228, 0.82);
+  color: rgba(246, 243, 241, 0.82);
   max-width: 46ch;
   margin: 0 0 32px;
 }
@@ -108,7 +109,7 @@ h1 {
   padding: 8px 16px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--gold-soft);
+  color: var(--gray-light);
 }
 
 /* Buttons */
@@ -126,12 +127,12 @@ h1 {
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
-  color: var(--plum-deep);
-  box-shadow: 0 10px 24px -10px rgba(214, 165, 75, 0.55);
+  background: linear-gradient(180deg, var(--red-soft), var(--red));
+  color: var(--cream);
+  box-shadow: 0 10px 24px -10px rgba(227, 25, 25, 0.55);
 }
 
-.btn-primary:hover { box-shadow: 0 14px 28px -10px rgba(214, 165, 75, 0.7); }
+.btn-primary:hover { box-shadow: 0 14px 28px -10px rgba(227, 25, 25, 0.7); }
 
 .btn-primary:disabled {
   opacity: 0.4;
@@ -145,7 +146,7 @@ h1 {
   border: 1px solid var(--line);
 }
 
-.btn-ghost:hover { border-color: rgba(251, 241, 228, 0.4); }
+.btn-ghost:hover { border-color: rgba(246, 243, 241, 0.4); }
 
 .btn-ghost:disabled { opacity: 0.3; cursor: not-allowed; }
 
@@ -158,20 +159,20 @@ h1 {
   display: block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--gold-soft);
+  color: var(--gray-light);
   margin-bottom: 10px;
 }
 
 .progress-track {
   height: 6px;
   border-radius: 999px;
-  background: rgba(251, 241, 228, 0.14);
+  background: rgba(246, 243, 241, 0.14);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--rose));
+  background: linear-gradient(90deg, var(--red), var(--red-soft));
   border-radius: 999px;
   transition: width 350ms ease;
 }
@@ -202,7 +203,7 @@ h1 {
   transition: background 150ms ease;
 }
 
-.option:hover { background: rgba(251, 241, 228, 0.05); }
+.option:hover { background: rgba(246, 243, 241, 0.05); }
 
 .option input {
   position: absolute;
@@ -222,26 +223,26 @@ h1 {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.95rem;
-  color: var(--gold-soft);
+  color: var(--gray-light);
   transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
 }
 
 .option-text {
   font-size: 0.98rem;
   line-height: 1.45;
-  color: rgba(251, 241, 228, 0.9);
+  color: rgba(246, 243, 241, 0.9);
 }
 
 .option.is-selected .option-letter {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--plum-deep);
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--cream);
 }
 
 .option.is-selected .option-text { color: var(--cream); }
 
 .option:focus-within .option-letter {
-  box-shadow: 0 0 0 3px rgba(214, 165, 75, 0.4);
+  box-shadow: 0 0 0 3px rgba(227, 25, 25, 0.4);
 }
 
 .nav-row {
@@ -270,7 +271,7 @@ h1 {
   margin: 0 0 6px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--gold-soft);
+  color: var(--red);
 }
 
 #result-title {
@@ -282,7 +283,7 @@ h1 {
 .result-copy {
   font-size: 1.02rem;
   line-height: 1.65;
-  color: rgba(251, 241, 228, 0.88);
+  color: rgba(246, 243, 241, 0.88);
   max-width: 52ch;
   margin: 0 0 32px;
 }
@@ -311,31 +312,31 @@ h1 {
 
 .blend-name {
   font-size: 0.88rem;
-  color: rgba(251, 241, 228, 0.85);
+  color: rgba(246, 243, 241, 0.85);
 }
 
 .blend-track {
   height: 8px;
   border-radius: 999px;
-  background: rgba(251, 241, 228, 0.12);
+  background: rgba(246, 243, 241, 0.12);
   overflow: hidden;
 }
 
 .blend-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--rose), var(--gold));
+  background: linear-gradient(90deg, var(--gray), var(--red));
 }
 
 .blend-pct {
   font-size: 0.85rem;
   font-weight: 700;
   text-align: right;
-  color: var(--gold-soft);
+  color: var(--gray-light);
 }
 
 .disclaimer {
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--red);
   padding-left: 16px;
   margin-bottom: 32px;
 }
@@ -343,7 +344,7 @@ h1 {
 .disclaimer p {
   margin: 0;
   font-size: 0.92rem;
-  color: rgba(251, 241, 228, 0.7);
+  color: rgba(246, 243, 241, 0.7);
   line-height: 1.5;
 }
 
@@ -355,7 +356,7 @@ h1 {
 .site-footer p {
   margin: 0;
   font-size: 0.82rem;
-  color: rgba(251, 241, 228, 0.45);
+  color: rgba(246, 243, 241, 0.45);
 }
 
 @media (max-width: 480px) {
