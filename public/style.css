@@ -76,6 +76,13 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  margin: 0 0 24px;
+}
+
 .kicker {
   display: inline-block;
   font-family: var(--font-body);
