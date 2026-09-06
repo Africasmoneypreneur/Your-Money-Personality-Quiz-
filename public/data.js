@@ -6,7 +6,7 @@
 
 const QUESTIONS = [
   {
-    text: "You receive an unexpected ₦500,000 (or your local equivalent). What do you do?",
+    text: "You receive an unexpected RWF 500,000 (or your local equivalent). What do you do?",
     options: [
       { letter: "A", text: "Buy something I've wanted and enjoy myself." },
       { letter: "B", text: "Put all of it straight into savings." },
