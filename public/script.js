@@ -6,6 +6,24 @@
 (function () {
   "use strict";
 
+  // Paste the URL you get from deploying the Google Apps Script web app here.
+  // Leave as-is and response tracking is simply skipped (no errors, nothing sent).
+  const SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyRld7wybnE1tvtNwIqV_GTTRYHDM1YqfHSUwBi8ZilAigTIFIrggg1iftKKOks28papg/exec";
+
+  function trackEvent(name, params) {
+    if (typeof gtag === "function") gtag("event", name, params || {});
+  }
+
+  function sendResponseToSheet(payload) {
+    if (!SHEET_WEBHOOK_URL || SHEET_WEBHOOK_URL.indexOf("PASTE_YOUR") !== -1) return;
+    fetch(SHEET_WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    }).catch(function () { /* never let a tracking failure block the results screen */ });
+  }
+
   const state = {
     current: 0,
     answers: new Array(QUESTIONS.length).fill(null) // each entry: "A" | "B" | "C" | "D" | "E"
@@ -150,6 +168,20 @@
       row.querySelector(".blend-name").textContent = RESULTS[letter].short;
       els.blendBars.appendChild(row);
     });
+
+    trackEvent("quiz_completed", { result: topResult.short });
+
+    sendResponseToSheet({
+      timestamp: new Date().toISOString(),
+      answers: state.answers.join(""),
+      result: topResult.short,
+      share_label: els.resultShare.textContent,
+      count_a: counts.A,
+      count_b: counts.B,
+      count_c: counts.C,
+      count_d: counts.D,
+      count_e: counts.E
+    });
   }
 
   function resetQuiz() {
@@ -177,6 +209,7 @@
   }
 
   els.btnStart.addEventListener("click", () => {
+    trackEvent("quiz_started");
     renderQuestion();
     showScreen("quiz");
   });
